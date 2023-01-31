@@ -6,7 +6,7 @@ export default function NavigationButton({ children }) {
 
 const Button = styled.button`
 	width: 100%;
-	height: 100px;
+	height: 100%;
 	border: none;
 	background-color: transparent;
 	cursor: pointer;

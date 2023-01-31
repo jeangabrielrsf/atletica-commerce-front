@@ -14,58 +14,56 @@ export default function NavigationBar() {
 	return (
 		<Wrapper>
 			<IconContext.Provider value={{ size: "20px" }}>
-				<Container>
-					<img src={logo} alt="atletica logo" />
-					<StyledLink to="/home">
-						<NavigationButton>
-							<BiHomeAlt />
-							<div>Página Inicial</div>
-						</NavigationButton>
-					</StyledLink>
+				<img src={logo} alt="atletica logo" />
+				<StyledLink to="/home">
+					<NavigationButton>
+						<BiHomeAlt />
+						<div>Página Inicial</div>
+					</NavigationButton>
+				</StyledLink>
 
-					<StyledLink to="/times">
-						<NavigationButton>
-							<BiFootball />
-							<div>Times</div>
-						</NavigationButton>
-					</StyledLink>
+				<StyledLink to="/times">
+					<NavigationButton>
+						<BiFootball />
+						<div>Times</div>
+					</NavigationButton>
+				</StyledLink>
 
-					<StyledLink to="/loja">
-						<NavigationButton>
-							<BiStore />
-							<div>Loja</div>
-						</NavigationButton>
-					</StyledLink>
+				<StyledLink to="/loja">
+					<NavigationButton>
+						<BiStore />
+						<div>Loja</div>
+					</NavigationButton>
+				</StyledLink>
 
-					<StyledLink to="/eventos">
-						<NavigationButton>
-							<BiCalendarEvent />
-							<div>Eventos</div>
-						</NavigationButton>
-					</StyledLink>
-				</Container>
+				<StyledLink to="/eventos">
+					<NavigationButton>
+						<BiCalendarEvent />
+						<div>Eventos</div>
+					</NavigationButton>
+				</StyledLink>
 			</IconContext.Provider>
 		</Wrapper>
 	);
 }
 
 const Wrapper = styled.div`
-	height: 100px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 80px;
 	width: 100%;
 	background-color: #000099;
+	display: flex;
 	align-items: center;
+	justify-content: space-evenly;
 
 	img {
 		object-fit: cover;
 		height: 70px;
 		width: 70px;
+		border-radius: 50%;
 	}
-`;
-
-const Container = styled.div`
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
 `;
 
 const StyledLink = styled(Link)`
