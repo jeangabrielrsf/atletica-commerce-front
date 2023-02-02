@@ -1,12 +1,25 @@
 import styled from "styled-components";
 
 export default function ProductItem({ product }) {
-	return <Wrapper>{product.name}</Wrapper>;
+	return (
+		<Wrapper>
+			<img src={product.pictureURL} alt="product picture" />
+
+			{product.name}
+		</Wrapper>
+	);
 }
 
 const Wrapper = styled.div`
-	width: 60px;
-	height: 60px;
 	border: 1px solid green;
-	margin: 0px 10px;
+	margin: 0px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	img {
+		width: 200px;
+		height: 200px;
+		border-radius: 5px;
+	}
 `;

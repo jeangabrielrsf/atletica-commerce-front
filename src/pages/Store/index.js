@@ -44,6 +44,10 @@ const ProductsContainer = styled.div`
 const ProductsBoxes = styled.div`
 	border: 1px solid red;
 	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	width: 100%;
+	margin-left: 100px;
 `;
 
 const Categories = styled.div`
