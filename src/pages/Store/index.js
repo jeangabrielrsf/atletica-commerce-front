@@ -36,7 +36,6 @@ export default function Store() {
 
 const ProductsContainer = styled.div`
 	border: 3px solid black;
-	width: 100%;
 	display: flex;
 	padding: 10px;
 `;
@@ -46,6 +45,7 @@ const ProductsBoxes = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
+	height: 100%;
 	width: 100%;
 	margin-left: 100px;
 `;
