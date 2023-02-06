@@ -5,12 +5,14 @@ export default function TeamBox({ category }) {
 }
 
 const Box = styled.div`
-	border: 1px solid red;
-	background-color: #e2e216;
+	border-radius: 5px;
+	background: #000099;
 	width: 300px;
 	height: 150px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	margin: 10px;
+	color: yellow;
+	font-size: 20px;
 `;

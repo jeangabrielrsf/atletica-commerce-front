@@ -20,9 +20,15 @@ export default function Store() {
 			<ProductsContainer>
 				<Categories>
 					<p>Categorias</p>
-					{categories?.map((item, index) => {
-						return <ProductCategory category={item} key={index} />;
-					})}
+					<ul>
+						{categories?.map((item, index) => {
+							return (
+								<li>
+									<ProductCategory category={item} key={index} />
+								</li>
+							);
+						})}
+					</ul>
 				</Categories>
 				<ProductsBoxes>
 					{products?.map((item, index) => {
@@ -35,13 +41,11 @@ export default function Store() {
 }
 
 const ProductsContainer = styled.div`
-	border: 3px solid black;
 	display: flex;
 	padding: 10px;
 `;
 
 const ProductsBoxes = styled.div`
-	border: 1px solid red;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;
@@ -52,8 +56,28 @@ const ProductsBoxes = styled.div`
 
 const Categories = styled.div`
 	border: 1px solid yellow;
+	background: #000099;
 	width: 15%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	p {
+		color: white;
+		font-size: 20px;
+	}
+
+	ul {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		margin: 0px auto;
+	}
+
+	ul:hover li {
+		opacity: 0.5;
+	}
+
+	ul li:hover {
+		opacity: 1;
+	}
 `;

@@ -25,7 +25,7 @@ export default function Teams() {
 }
 
 const Container = styled.div`
-	border: 1px solid black;
+	padding: 10px;
 	display: flex;
 	justify-content: center;
 	flex-wrap: wrap;

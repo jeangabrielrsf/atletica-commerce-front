@@ -8,6 +8,7 @@ export default function HomeScreen() {
 		<Wrapper>
 			<NavigationBar />
 			<BannerImage src={capa} alt="foto de capa" />
+			<Text>Em breve mais informações sobre a atlética!</Text>
 		</Wrapper>
 	);
 }
@@ -28,4 +29,10 @@ const Boxes = styled.div`
 		height: 100px;
 		border: 1px solid black;
 	}
+`;
+
+const Text = styled.div`
+	font-weight: 700;
+	font-size: 30px;
+	color: yellow;
 `;

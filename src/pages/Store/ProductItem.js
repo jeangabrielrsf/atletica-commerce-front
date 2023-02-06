@@ -50,7 +50,7 @@ export default function ProductItem({ product }) {
 }
 
 const Wrapper = styled.div`
-	background-color: blue;
+	background-color: #000099;
 	border: 1px solid gray;
 	width: 30%;
 	height: 50%;

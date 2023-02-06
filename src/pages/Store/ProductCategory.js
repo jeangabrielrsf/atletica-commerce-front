@@ -5,6 +5,16 @@ export default function ProductCategory({ category }) {
 }
 
 const Wrapper = styled.div`
-	width: 100px;
+	width: 80%;
+	background-color: #ffff00;
 	border: 1px solid blue;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 5px auto;
+	color: black;
+
+	&:hover {
+		cursor: pointer;
+	}
 `;
