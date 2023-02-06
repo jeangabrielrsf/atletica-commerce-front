@@ -1,16 +1,14 @@
 import styled from "styled-components";
 import logo from "../../assets/images/atletica-logo.jpg";
-import {
-	BiHomeAlt,
-	BiFootball,
-	BiStore,
-	BiCalendarEvent,
-} from "react-icons/bi";
+import { BiHomeAlt, BiFootball, BiStore, BiCart } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import NavigationButton from "./NavigationButton";
 import { IconContext } from "react-icons";
+import { useContext } from "react";
+import CartContext from "../../contexts/CartContext";
 
 export default function NavigationBar() {
+	const { cart, setCart } = useContext(CartContext);
 	return (
 		<Wrapper>
 			<IconContext.Provider value={{ size: "20px" }}>
@@ -36,11 +34,12 @@ export default function NavigationBar() {
 					</NavigationButton>
 				</StyledLink>
 
-				<StyledLink to="/eventos">
+				<StyledLink to="/carrinho">
 					<NavigationButton>
-						<BiCalendarEvent />
-						<div>Eventos</div>
+						<BiCart />
+						<div>Carrinho</div>
 					</NavigationButton>
+					<RoundCount>{cart?.length}</RoundCount>
 				</StyledLink>
 			</IconContext.Provider>
 		</Wrapper>
@@ -72,4 +71,14 @@ const StyledLink = styled(Link)`
 	&:active {
 		text-decoration: none;
 	}
+	display: flex;
+`;
+
+const RoundCount = styled.div`
+	background: red;
+	border-radius: 50%;
+	display: flex;
+	width: 30px;
+	align-items: center;
+	justify-content: center;
 `;

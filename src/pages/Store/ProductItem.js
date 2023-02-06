@@ -1,16 +1,26 @@
 import styled from "styled-components";
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { BsCartPlus } from "react-icons/bs";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import CartContext from "../../contexts/CartContext";
 
 export default function ProductItem({ product }) {
 	const [counter, setCounter] = useState(0);
+	const { cart, setCart } = useContext(CartContext);
+
 	function handleCounter(operation) {
 		if (operation === "minus" && counter > 0) {
 			setCounter(counter - 1);
 		}
 		if (operation === "plus") {
 			setCounter(counter + 1);
+		}
+	}
+
+	function addToCart() {
+		if (counter > 0) {
+			const newCart = [...cart, product];
+			setCart(newCart);
 		}
 	}
 	return (
@@ -30,7 +40,7 @@ export default function ProductItem({ product }) {
 						<Counter>{counter}</Counter>
 						<AiOutlinePlus onClick={() => handleCounter("plus")} />
 					</div>
-					<div className="buy">
+					<div className="buy" onClick={addToCart}>
 						<BsCartPlus />
 					</div>
 				</Icons>

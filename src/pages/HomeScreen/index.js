@@ -8,15 +8,6 @@ export default function HomeScreen() {
 		<Wrapper>
 			<NavigationBar />
 			<BannerImage src={capa} alt="foto de capa" />
-			<Boxes>
-				<div>Seleção 1</div>
-
-				<div>Seleção 2</div>
-
-				<div>Seleção 3</div>
-
-				<div>Seleção 4</div>
-			</Boxes>
 		</Wrapper>
 	);
 }

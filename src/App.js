@@ -11,26 +11,32 @@ import { ProductsCategoriesProvider } from "./contexts/ProductsCategoriesContext
 import { TeamsCategoriesProvider } from "./contexts/TeamsCategoriesContext";
 import { TeamsProvider } from "./contexts/TeamsContext";
 import Teams from "./pages/Teams";
-
+import CartContext from "./contexts/CartContext";
+import { useState } from "react";
+import UserCart from "./pages/UserCart";
 function App() {
+	const [cart, setCart] = useState([]);
 	return (
 		<>
-			<TeamsCategoriesProvider>
-				<TeamsProvider>
-					<ProductsCategoriesProvider>
-						<ProductsProvider>
-							<Router>
-								<Routes>
-									<Route path="/home" element={<HomeScreen />} />
-									<Route path="/loja" element={<Store />} />
-									<Route path="/times" element={<Teams />} />
-									<Route index path="*" element={<Navigate to="/home" />} />
-								</Routes>
-							</Router>
-						</ProductsProvider>
-					</ProductsCategoriesProvider>
-				</TeamsProvider>
-			</TeamsCategoriesProvider>
+			<CartContext.Provider value={{ cart, setCart }}>
+				<TeamsCategoriesProvider>
+					<TeamsProvider>
+						<ProductsCategoriesProvider>
+							<ProductsProvider>
+								<Router>
+									<Routes>
+										<Route path="/home" element={<HomeScreen />} />
+										<Route path="/loja" element={<Store />} />
+										<Route path="/times" element={<Teams />} />
+										<Route path="/carrinho" element={<UserCart />} />
+										<Route index path="*" element={<Navigate to="/home" />} />
+									</Routes>
+								</Router>
+							</ProductsProvider>
+						</ProductsCategoriesProvider>
+					</TeamsProvider>
+				</TeamsCategoriesProvider>
+			</CartContext.Provider>
 		</>
 	);
 }
